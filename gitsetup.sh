@@ -4,7 +4,7 @@
 # clone the repo in home directory
 # `git clone https://github.com/royaad/git-credential-oauth.git/`
 # run bash file
-# `source ~/gitsetup.sh`
+# `source ~/git-credential-oauth/gitsetup.sh`
 
 # start by updating and upgrading the distro
 sudo apt update
@@ -34,4 +34,16 @@ cd ~/git-credential-oauth
 git push
 
 # remove directory after authentication
-rm -ri ~/git-credential-oauth
+echo "removing git-credential-oauth directory" 
+rm -rf ~/git-credential-oauth
+cd
+
+# install yadm
+sudo apt install yadm
+
+# clone yadm dotfile repo
+cd
+yadm clone -f https://github.com/royaad/dotfiles.git
+
+# run bootstrap
+source ~/.config/yadm/bootstrap.sh
